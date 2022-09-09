@@ -1,5 +1,5 @@
 const Usuario = require("../models/usuario");
-
+const Product = require("../models/producto");
 
 //VALIDAR EMAIL SI EXISTE
 const emailExiste = async (email) => {
@@ -18,7 +18,15 @@ const existeUsuarioPorId = async (id) => {
   }
 };
 
+const productExiste = async (name) => {
+  const existeProduct = await Product.findOne({ name });
+  if (existeProduct) {
+    throw new Error(`El producto ya existe`);
+  }
+};
+
 module.exports = {
   emailExiste,
   existeUsuarioPorId,
+  productExiste,
 };

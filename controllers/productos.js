@@ -45,9 +45,9 @@ const deleteProductController = async (req, res) => {
   }
 };
 
-module.exports={
-    deleteProductController,
-    updateProductController,
-    addProductController,
-    getProductController,
-}
+module.exports = {
+  deleteProductController,
+  updateProductController,
+  addProductController,
+  getProductController,
+};
